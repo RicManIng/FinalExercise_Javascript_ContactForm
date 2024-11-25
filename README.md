@@ -34,7 +34,7 @@ This project is the final exercise for the JavaScript course. The goal is to cre
 
 1. Clone the repository:
 ```bash
-   git clone [repository URL]
+   git clone https://github.com/RicManIng/FinalExercise_Javascript_ContactForm.git
 ```
 2. Place the files in your web server's root directory.
 3. Open the contact form in your browser.
