@@ -32,9 +32,14 @@
     }
 
     function contact_checkPhone($phone){
+        if($phone == ""){
+            return true;
+        }
+
         if(!preg_match("/^[0-9]{10}$/", $phone)){
             return false;
         }
+        
         return true;
     }
 ?>

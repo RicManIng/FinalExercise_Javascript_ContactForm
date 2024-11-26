@@ -101,7 +101,7 @@
                 <textarea name="message" id="message" rows="10" required placeholder="insert here the message of your email"><?= $_POST['message'] ?? ''; ?></textarea>
                 <p class="info" id="info-message"></p>
                 <p class="error" id="error-message"><?= $errors['message'] ?? '';?></p>
-                <button type="submit">Send</button>
+                <button type="submit" id="submit" disabled>Send</button>
             </form>
         <?php endif; ?>
     </main>

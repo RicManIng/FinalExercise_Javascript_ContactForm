@@ -46,6 +46,43 @@ function hideErrorMessage(elt){
     elt.style.display = 'none';
 }
 
+function validateForm(){
+    let valid = true;
+
+    if (!validations.validateLength(name.value, 2, 50)){
+        valid = false;
+    }
+
+    if (!validations.validateLength(surname.value, 2, 50)){
+        valid = false;
+    }
+
+    if (!validations.validateEmail(email.value)){
+        valid = false;
+    }
+
+    if (!validations.validateLength(object.value, 2, 100)){
+        valid = false;
+    }
+
+    if (!validations.validateLength(message.value, 50, 1000)){
+        valid = false;
+    }
+
+    if (!validations.validatePhone(phone.value) && validations.validateIsNotNull(phone.value)){
+        valid = false;
+    }
+
+    if(!validations.validateIsNotNull(infoSubject.options[infoSubject.selectedIndex].value)){
+        valid = false;
+    }
+
+    if (valid){
+        const button = document.getElementById('submit');
+        button.disabled = false;
+    }
+}
+
 // Inizializzazione delle variabili all'interno di window.onload
 window.onload = function() {
     validations = new Validations();
@@ -98,6 +135,7 @@ window.onload = function() {
             labelName.classList.add('error-label');
         } else {
             name.style.marginBottom = '5vh';
+            validateForm();
         }
         hideInfoMessage(infoName);
     });
@@ -118,6 +156,7 @@ window.onload = function() {
             labelSurname.classList.add('error-label');
         } else {
             surname.style.marginBottom = '5vh';
+            validateForm();
         }
         hideInfoMessage(infoSurname);
         surname.classList.remove('selected');
@@ -137,6 +176,8 @@ window.onload = function() {
             email.style.marginBottom = '0px';
             email.classList.add('error-input');
             labelEmail.classList.add('error-label');
+        } else {
+            validateForm();
         }
         email.classList.remove('selected');
     });
@@ -155,6 +196,8 @@ window.onload = function() {
             phone.style.marginBottom = '0px';
             phone.classList.add('error-input');
             labelPhone.classList.add('error-label');
+        } else {
+            validateForm();
         }
         phone.classList.remove('selected');
     });
@@ -175,6 +218,7 @@ window.onload = function() {
             labelObject.classList.add('error-label');
         } else {
             object.style.marginBottom = '5vh';
+            validateForm();
         }
         hideInfoMessage(infoObject);
         object.classList.remove('selected');
@@ -196,6 +240,7 @@ window.onload = function() {
             labelMessage.classList.add('error-label');
         } else {
             message.style.marginBottom = '5vh';
+            validateForm();
         }
         hideInfoMessage(infoMessage);
         message.classList.remove('selected');
@@ -213,6 +258,7 @@ window.onload = function() {
             infoSubject.classList.remove('error-input');
             infoSubject.classList.remove('not-select');
             infoSubject.style.marginBottom = '5vh';
+            validateForm();
         } else {
             infoSubject.style.marginBottom = '0px';
             showErrorMessage(errorSubject, 'Please select a subject.');
