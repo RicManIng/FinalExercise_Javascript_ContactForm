@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact form</title>
     <link rel="stylesheet" href="resources/css/contact.min.css">
-    <script src="js/contact.js"></script>
+    <script type="module" src="js/contact.js"></script>
 </head>
 <body>
     <?php
@@ -21,6 +21,7 @@
             $infoSubject = $_POST["info-subject"];
             $object = $_POST["object"];
             $message = $_POST["message"];
+            $phone = $_POST["phone"];
 
             if(!contact_checkStringLength($name, 2, 50)){
                 $errors["name"] = "Name must be between 2 and 50 characters";
@@ -44,6 +45,10 @@
 
             if(!contact_checkEmail($email)){
                 $errors["email"] = "Invalid email";
+            }
+
+            if(!contact_checkPhone($phone)){
+                $errors["phone"] = "Invalid phone number";
             }
 
             if(count($errors) == 0){
@@ -73,6 +78,10 @@
                 <input type="email" name="email" id="email" value="<?= $_POST['email'] ?? ''; ?>" required>
                 <p class="error" id="error-email"><?= $errors['email'] ?? '';?></p>
 
+                <label for="phone">Telephone : </label>
+                <input type="tel" name="phone" id="phone" value="<?= $_POST['phone'] ?? ''; ?>">
+                <p class="error" id="error-phone"><?= $errors['phone'] ?? '';?></p>
+
                 <select name="info-subject" id="info-subject">
                     <option value="" <?= (@$_POST['info-subject'] == '') ? 'selected' : ''?>>Select an argument</option>
                     <option value="webDev" <?= (@$_POST['info-subject'] == 'webDev') ? 'selected' : ''?>>Web Development</option>
@@ -80,7 +89,7 @@
                     <option value="jobOffer" <?= (@$_POST['info-subject'] == 'jobOffer') ? 'selected' : ''?>>Job Opportunity</option>
                     <option value="other" <?= (@$_POST['info-subject'] == 'other') ? 'selected' : ''?>>Other</option>
                 </select>
-                <p class="error" id="error-info-subject"><?= $errors['info-subject'] ?? '';?></p>
+                <p class="error" id="error-subject"><?= $errors['info-subject'] ?? '';?></p>
 
                 <label for="object">Object : </label>
                 <input type="text" name="object" id="object" value="<?= $_POST['object'] ?? ''; ?>" required>
