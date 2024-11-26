@@ -78,6 +78,7 @@ window.onload = function() {
         hideErrorMessage(errorName);
         showInfoMessage(infoName, 'Name length between 2 and 50 characters.');
         name.style.marginBottom = '0px';
+        name.classList.add('selected');
         
     });
     name.addEventListener('blur', function(){
@@ -87,6 +88,8 @@ window.onload = function() {
             name.style.marginBottom = '5vh';
         }
         hideInfoMessage(infoName);
+        name.classList.remove('selected');
+
     });
 
     /* surname message */
