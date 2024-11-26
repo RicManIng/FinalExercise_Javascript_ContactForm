@@ -69,16 +69,18 @@ body{
                 border-color: rgb(254, 95, 95);
                 background-color: rgb(77, 0, 0);
             }
+
+            &.not-select{
+                color: rgb(117, 117, 117);
+            }
         }
 
-        select{
-            .sel-default{
-                color: rgb(193, 193, 193);
-            }
+        .sel-default{
+            color: rgb(193, 193, 193);
+        }
 
-            .sel-selected{
-                color: skyblue;
-            }
+        .sel-selected{
+            color: skyblue;
         }
 
         label{

@@ -203,4 +203,22 @@ window.onload = function() {
     message.addEventListener('keyup', function(){
         showInfoMessage(infoMessage, 'Message length between 50 and 1000 characters.        Actually: ' + message.value.length + ' / 1000');
     });
+
+    /* subject messages */
+    infoSubject.addEventListener('change', function(){
+        const selectedOption = infoSubject.options[infoSubject.selectedIndex].value;
+        if (validations.validateIsNotNull(selectedOption)){
+            hideErrorMessage(errorSubject);
+            labelSubject.classList.remove('error-label');
+            infoSubject.classList.remove('error-input');
+            infoSubject.classList.remove('not-select');
+            infoSubject.style.marginBottom = '5vh';
+        } else {
+            infoSubject.style.marginBottom = '0px';
+            showErrorMessage(errorSubject, 'Please select a subject.');
+            labelSubject.classList.add('error-label');
+            infoSubject.classList.add('error-input');
+            infoSubject.classList.add('not-select');
+        }
+    });
 }
