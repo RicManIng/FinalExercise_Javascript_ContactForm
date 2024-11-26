@@ -82,12 +82,13 @@
                 <input type="tel" name="phone" id="phone" value="<?= $_POST['phone'] ?? ''; ?>">
                 <p class="error" id="error-phone"><?= $errors['phone'] ?? '';?></p>
 
+                <label for="info-subject">Select a contact argument : </label>
                 <select name="info-subject" id="info-subject">
-                    <option value="" <?= (@$_POST['info-subject'] == '') ? 'selected' : ''?>>Select an argument</option>
-                    <option value="webDev" <?= (@$_POST['info-subject'] == 'webDev') ? 'selected' : ''?>>Web Development</option>
-                    <option value="embDev" <?= (@$_POST['info-subject'] == 'embDev') ? 'selected' : ''?>>Embedded System Development</option>
-                    <option value="jobOffer" <?= (@$_POST['info-subject'] == 'jobOffer') ? 'selected' : ''?>>Job Opportunity</option>
-                    <option value="other" <?= (@$_POST['info-subject'] == 'other') ? 'selected' : ''?>>Other</option>
+                    <option class="sel-default" value="" <?= (@$_POST['info-subject'] == '') ? 'selected' : ''?>>Select an argument</option>
+                    <option class="sel-selection" value="webDev" <?= (@$_POST['info-subject'] == 'webDev') ? 'selected' : ''?>>Web Development</option>
+                    <option class="sel-selection" value="embDev" <?= (@$_POST['info-subject'] == 'embDev') ? 'selected' : ''?>>Embedded System Development</option>
+                    <option class="sel-selection" value="jobOffer" <?= (@$_POST['info-subject'] == 'jobOffer') ? 'selected' : ''?>>Job Opportunity</option>
+                    <option class="sel-selection" value="other" <?= (@$_POST['info-subject'] == 'other') ? 'selected' : ''?>>Other</option>
                 </select>
                 <p class="error" id="error-subject"><?= $errors['info-subject'] ?? '';?></p>
 

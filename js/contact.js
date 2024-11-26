@@ -107,8 +107,7 @@ window.onload = function() {
     /* email messages */
     email.addEventListener('focus', function(){
         hideErrorMessage(errorEmail);
-        email.style.backgroundColor = 'darkgrey';
-        emain.style.marginBottom = '5vh';
+        email.style.marginBottom = '5vh';
     });
     email.addEventListener('blur', function(){
         if (!validations.validateEmail(email.value)){
@@ -133,7 +132,6 @@ window.onload = function() {
     object.addEventListener('focus', function(){
         hideErrorMessage(errorObject);
         showInfoMessage(infoObject, 'Object length between 2 and 100 characters.');
-        object.style.backgroundColor = 'darkgrey';
         object.style.marginBottom = '0px';
     });
     object.addEventListener('blur', function(){

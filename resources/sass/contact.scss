@@ -9,12 +9,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(201, 240, 255);
 
     main{
+        background-color: rgb(0, 0, 92);
         display: flex;
         flex-direction: column;
         width: 50%;
         margin: 5vh 0;
+        padding: 40px;
+        border-radius: 20px;
 
         .info, .error{
             display: none;
@@ -23,7 +27,7 @@ body{
         }
 
         .info{
-            color: darkgrey;
+            color: rgb(193, 193, 193);
         }
 
         .error{
@@ -33,18 +37,48 @@ body{
         h1{
             text-align: center;
             margin-bottom: 3vh;
+            color: skyblue;
         }
 
         input, select, textarea{
             margin-bottom: 5vh;
             padding: $input-padding;
             border-radius: $input-border-radius;
-            border: 1px solid #ccc;
+            border: 1px solid skyblue;
+            background-color: rgb(0, 0, 67);
+            color: skyblue;
+
+            &::placeholder{
+                color: rgb(193, 193, 193);
+            }
+        }
+
+        select{
+            .sel-default{
+                color: rgb(193, 193, 193);
+            }
+
+            .sel-selected{
+                color: skyblue;
+            }
+        }
+
+        label{
+            margin-bottom: 1vh;
+            color: skyblue;
         }
 
         form{
             display: flex;
             flex-direction: column;  
-        };
+        }
+
+        button{
+            padding: $input-padding;
+            border-radius: $input-border-radius;
+            width: 35%;
+            margin: 0 auto;
+            background-color: rgb(207, 207, 207);
+        }
     }
 }
