@@ -64,25 +64,25 @@
         <h1>Contact me</h1>
             <form action="index.php" method="post" novalidate>
 
-                <label for="name">Name : </label>
-                <input type="text" name="name" id="name" value="<?= $_POST['name'] ?? ''; ?>" required>
+                <label for="name">Name * : </label>
+                <input type="text" name="name" id="name" value="<?= $_POST['name'] ?? ''; ?>" required placeholder="insert here your name">
                 <p class="info" id="info-name"></p>
                 <p class="error" id="error-name"><?= $errors['name'] ?? '';?></p>
 
-                <label for="surname">Surname : </label>
-                <input type="text" name="surname" id="surname" value="<?= $_POST['surname'] ?? ''; ?>" required>
+                <label for="surname">Surname * : </label>
+                <input type="text" name="surname" id="surname" value="<?= $_POST['surname'] ?? ''; ?>" required placeholder="insert here your surname">
                 <p class="info" id="info-surname"></p>
                 <p class="error" id="error-surname"><?= $errors['surname'] ?? '';?></p>
 
-                <label for="email">Email : </label>
-                <input type="email" name="email" id="email" value="<?= $_POST['email'] ?? ''; ?>" required>
+                <label for="email">Email * : </label>
+                <input type="email" name="email" id="email" value="<?= $_POST['email'] ?? ''; ?>" required placeholder="insert here your email address">
                 <p class="error" id="error-email"><?= $errors['email'] ?? '';?></p>
 
                 <label for="phone">Telephone : </label>
-                <input type="tel" name="phone" id="phone" value="<?= $_POST['phone'] ?? ''; ?>">
+                <input type="tel" name="phone" id="phone" value="<?= $_POST['phone'] ?? ''; ?>" placeholder="insert here your phone number">
                 <p class="error" id="error-phone"><?= $errors['phone'] ?? '';?></p>
 
-                <label for="info-subject">Select a contact argument : </label>
+                <label for="info-subject">Select a contact argument * : </label>
                 <select name="info-subject" id="info-subject">
                     <option class="sel-default" value="" <?= (@$_POST['info-subject'] == '') ? 'selected' : ''?>>Select an argument</option>
                     <option class="sel-selection" value="webDev" <?= (@$_POST['info-subject'] == 'webDev') ? 'selected' : ''?>>Web Development</option>
@@ -92,13 +92,13 @@
                 </select>
                 <p class="error" id="error-subject"><?= $errors['info-subject'] ?? '';?></p>
 
-                <label for="object">Object : </label>
-                <input type="text" name="object" id="object" value="<?= $_POST['object'] ?? ''; ?>" required>
+                <label for="object">Object * : </label>
+                <input type="text" name="object" id="object" value="<?= $_POST['object'] ?? ''; ?>" required placeholder="insert here the ogject of the contact mail">
                 <p class="info" id="info-object"></p>
                 <p class="error" id="error-object"><?= $errors['object'] ?? '';?></p>
 
-                <label for="message">Message : </label>
-                <textarea name="message" id="message" rows="10" required><?= $_POST['message'] ?? ''; ?></textarea>
+                <label for="message">Message * : </label>
+                <textarea name="message" id="message" rows="10" required placeholder="insert here the message of your email"><?= $_POST['message'] ?? ''; ?></textarea>
                 <p class="info" id="info-message"></p>
                 <p class="error" id="error-message"><?= $errors['message'] ?? '';?></p>
                 <button type="submit">Send</button>

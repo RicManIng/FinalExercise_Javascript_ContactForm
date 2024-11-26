@@ -23,7 +23,7 @@ export class Validations{
 
     validateIsNotNull(value){
         // validate is not null
-        if (value === null || value === undefined || value === ''){
+        if (value == null || value == undefined || value == ''){
             return false;
         }
 

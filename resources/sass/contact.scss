@@ -43,22 +43,31 @@ body{
             color: skyblue;
         }
 
+        textarea{
+            resize: none;
+        }
+
         input, select, textarea{
             margin-bottom: 5vh;
             padding: $input-padding;
             border-radius: $input-border-radius;
             border: 1px solid skyblue;
-            background-color: rgb(0, 0, 67);
+            background-color: rgb(0, 0, 35);
             color: skyblue;
 
 
             &::placeholder{
-                color: rgb(193, 193, 193);
+                color: rgb(117, 117, 117);
             }
 
             &.selected{
                 background-color: skyblue;
                 color: darkblue;
+            }
+
+            &.error-input{
+                border-color: rgb(254, 95, 95);
+                background-color: rgb(77, 0, 0);
             }
         }
 
@@ -75,6 +84,10 @@ body{
         label{
             margin-bottom: 1vh;
             color: skyblue;
+
+            &.error-label{
+                color: rgb(254, 95, 95);
+            }
         }
 
         form{
