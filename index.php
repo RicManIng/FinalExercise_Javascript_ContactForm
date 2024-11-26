@@ -74,7 +74,7 @@
                 <p class="info" id="info-surname"></p>
                 <p class="error" id="error-surname"><?= $errors['surname'] ?? '';?></p>
 
-                <label for="email">Email</label>
+                <label for="email">Email : </label>
                 <input type="email" name="email" id="email" value="<?= $_POST['email'] ?? ''; ?>" required>
                 <p class="error" id="error-email"><?= $errors['email'] ?? '';?></p>
 
@@ -97,7 +97,7 @@
                 <p class="error" id="error-object"><?= $errors['object'] ?? '';?></p>
 
                 <label for="message">Message : </label>
-                <textarea name="message" id="message" required><?= $_POST['message'] ?? ''; ?></textarea>
+                <textarea name="message" id="message" rows="10" required><?= $_POST['message'] ?? ''; ?></textarea>
                 <p class="info" id="info-message"></p>
                 <p class="error" id="error-message"><?= $errors['message'] ?? '';?></p>
                 <button type="submit">Send</button>

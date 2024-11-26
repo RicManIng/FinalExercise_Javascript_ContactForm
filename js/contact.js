@@ -77,12 +77,14 @@ window.onload = function() {
     name.addEventListener('focus', function(){
         hideErrorMessage(errorName);
         showInfoMessage(infoName, 'Name length between 2 and 50 characters.');
-        name.style.backgroundColor = 'darkgrey';
+        name.style.marginBottom = '0px';
+        
     });
     name.addEventListener('blur', function(){
         if (!validations.validateLength(name.value, 2, 50)){
             showErrorMessage(errorName, 'Your name must be between 2 and 50 characters long.');
-            name.style.backgroundColor = 'red';
+        } else {
+            name.style.marginBottom = '5vh';
         }
         hideInfoMessage(infoName);
     });
@@ -91,12 +93,13 @@ window.onload = function() {
     surname.addEventListener('focus', function(){
         hideErrorMessage(errorSurname);
         showInfoMessage(infoSurname, 'Surname length between 2 and 50 characters.');
-        surname.style.backgroundColor = 'darkgrey';
+        surname.style.marginBottom = '0px';
     });
     surname.addEventListener('blur', function(){
         if (!validations.validateLength(surname.value, 2, 50)){
             showErrorMessage(errorSurname, 'Your surname must be between 2 and 50 characters long.');
-            surname.style.backgroundColor = 'red';
+        } else {
+            surname.style.marginBottom = '5vh';
         }
         hideInfoMessage(infoSurname);
     });
@@ -105,23 +108,24 @@ window.onload = function() {
     email.addEventListener('focus', function(){
         hideErrorMessage(errorEmail);
         email.style.backgroundColor = 'darkgrey';
+        emain.style.marginBottom = '5vh';
     });
     email.addEventListener('blur', function(){
         if (!validations.validateEmail(email.value)){
             showErrorMessage(errorEmail, 'Please enter a valid email address.');
-            email.style.backgroundColor = 'red';
+            email.style.marginBottom = '0px';
         }
     });
 
     /* phone messages */
     phone.addEventListener('focus', function(){
         hideErrorMessage(errorPhone);
-        phone.style.backgroundColor = 'darkgrey';
+        phone.style.marginBottom = '5vh';
     });
     phone.addEventListener('blur', function(){
         if (!validations.validatePhone(phone.value)){
             showErrorMessage(errorPhone, 'Invalid phone number.');
-            phone.style.backgroundColor = 'red';
+            phone.style.marginBottom = '0px';
         }
     });
 
@@ -130,11 +134,13 @@ window.onload = function() {
         hideErrorMessage(errorObject);
         showInfoMessage(infoObject, 'Object length between 2 and 100 characters.');
         object.style.backgroundColor = 'darkgrey';
+        object.style.marginBottom = '0px';
     });
     object.addEventListener('blur', function(){
         if (!validations.validateLength(object.value, 2, 100)){
             showErrorMessage(errorObject, 'The object must be between 2 and 100 characters long.');
-            object.style.backgroundColor = 'red';
+        } else {
+            object.style.marginBottom = '5vh';
         }
         hideInfoMessage(infoObject);
     });
@@ -143,12 +149,13 @@ window.onload = function() {
     message.addEventListener('focus', function(){
         hideErrorMessage(errorMessage);
         showInfoMessage(infoMessage, 'Message length between 50 and 1000 characters.        Actually: ' + message.value.length + ' / 1000');
-        message.style.backgroundColor = 'darkgrey';
+        message.style.marginBottom = '0px';
     });
     message.addEventListener('blur', function(){
         if (!validations.validateLength(message.value, 50, 1000)){
             showErrorMessage(errorMessage, 'The message must be between 50 and 1000 characters long.');
-            message.style.backgroundColor = 'red';
+        } else {
+            message.style.marginBottom = '5vh';
         }
         hideInfoMessage(infoMessage);
     });
